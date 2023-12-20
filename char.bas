@@ -9,7 +9,7 @@ Sub WriteToScreen()
     ' Escreve a string na memória de vídeo
     For i As Integer = 0 To Len(s) - 1
         ptrVideoMemory[i * 2] = Asc(s[i]) ' Caractere ASCII
-        ptrVideoMemory[i * 2 + 1] = &He0 ' Cor de fundo e texto (branco sobre preto)
+        ptrVideoMemory[i * 2 + 1] = &He0 ' Cor de fundo e texto 
     Next
 End Sub
 
