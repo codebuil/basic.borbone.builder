@@ -14,4 +14,4 @@ Sub WriteToScreen()
 End Sub
 
 WriteToScreen()
-Sleep
+
