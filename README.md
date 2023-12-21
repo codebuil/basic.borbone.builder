@@ -1,2 +1,4 @@
-# Com32.as
-Make a com 32 file compile
+# freebasic.barbones
+
+
+https://sourceforge.net/projects/fbc/files/FreeBASIC-1.10.0/Binaries-Linux/
