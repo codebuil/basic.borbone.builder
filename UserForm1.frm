@@ -14,6 +14,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
+
 Private Declare PtrSafe Sub Rectangle Lib "gdi32" (ByVal hdc As Long, ByVal x1 As Long, ByVal y1 As Long, ByVal x2 As Long, ByVal y2 As Long)
 Private Declare PtrSafe Function GetDC Lib "user32" (ByVal hwnd As Long) As Long
 Private Declare PtrSafe Function ReleaseDC Lib "user32" (ByVal hwnd As Long, ByVal hdc As Long) As Long
@@ -44,7 +45,7 @@ Private Sub UserForm_Activate()
     Dim hwnd As Long
     Dim x, y As Long
     
-    Me.Repaint
+    
     
     Dim t As Boolean
     t = True
@@ -53,11 +54,12 @@ Private Sub UserForm_Activate()
     
     hwnd = GetForegroundWindow() ' Obter a janela com foco
     For n = 0 To 1000
+    Me.Repaint
     DesenharRetangulo hwnd, RGB(255, 0, 0), x, y, x + 10, y + 10
     x = x + 10
     y = y + 10
     If x > Me.Height Or y > Me.Width Then
-    Me.Repaint
+    
     x = 0
     y = 0
     End If
