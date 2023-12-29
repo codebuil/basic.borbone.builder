@@ -1,6 +1,3 @@
-#exel.vba
+#mingw.barbone
 
-visual basic a win api
-
-jumping ball
-
+barbone using mingw to compile
