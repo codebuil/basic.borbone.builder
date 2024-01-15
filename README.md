@@ -1,8 +1,3 @@
-#mingw.barbone
+#list.stdio.fuctions
 
-barbone using mingw to compile
-http://download.savannah.gnu.org/releases/tinycc/
-
-
-
-https://sourceforge.net/projects/mingw/
+list same simple stand io library functions
