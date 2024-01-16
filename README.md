@@ -1,3 +1,4 @@
-#list.stdio.fuctions
+#math.expr.analizer
 
-list same simple stand io library functions
+
+math expre analizer
