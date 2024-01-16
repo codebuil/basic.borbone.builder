@@ -37,6 +37,7 @@ def executar_operacao(match):
     elif operacao == '/':
         return f'div {operando1},{operando2}\n'
 
+print("\x1bc\x1b[43;37m")
 if __name__ == "__main__":
     expressao_input = input("math exp: ").strip()
     resultado = analisar_expressao(expressao_input)
