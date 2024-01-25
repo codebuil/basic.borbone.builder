@@ -44,10 +44,13 @@ class BareboneBuilder:
         self.text_area.delete(1.0, tk.END)
         self.execute_command("mv -f kernel.bin /tmp/null",False)
         self.execute_command("as -o /tmp/boot.o ./file/boot.s",True)
-        fff=f'fbc -c  "$1" -o /tmp/kernel.o'.replace("$1",filename)
+        fff=f'gcc -c  "./file/base.c" -o /tmp/base.o'
         
         self.execute_command(fff,True)
-        self.execute_command("ld -T ./file/link.ld -nostdlib /tmp/boot.o /tmp/kernel.o -o /tmp/kernel.bin",True)
+        fff=f'fbc -c  -lib "/tmp/base.o" "$1" -o /tmp/kernel.o'.replace("$1",filename)
+        
+        self.execute_command(fff,True)
+        self.execute_command("ld -T ./file/link.ld -nostdlib /tmp/boot.o /tmp/base.o /tmp/kernel.o -o /tmp/kernel.bin",True)
         self.execute_command("grub-file --is-x86-multiboot /tmp/kernel.bin",True)
         self.execute_command("mv /tmp/kernel.bin ./",False)
 
