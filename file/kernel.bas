@@ -4,13 +4,16 @@ public Sub MAIN()export
     const hello1 as string ="hello "
     const hello2 as string ="world..."
     dim p1 as byte ptr=@hello1
+    
     dim p2 as byte ptr=@hello2
-    dim p3 as byte ptr=mallocs(150)
-    strcpys(p3,p1)
-    strcats(p3,p2)
+    
+    dim p3 as ostring
+    p3.pors1=mallocs(150)
+    p3 &= p1
+    p3 += p2
     clears
     locates 10,10
-    prints p3
+    prints p3.pors1
 End Sub
 MAIN
 

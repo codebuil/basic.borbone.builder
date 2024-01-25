@@ -10,4 +10,18 @@ extern "C"
 	declare sub strcats cdecl alias "strcats"(s1 as byte ptr,s2 as byte ptr)
 end extern
 
+type ostring
+    pors1 as byte ptr
+    declare Operator &= (byval pors1 as byte ptr)
+    declare Operator += (byval pors1 as byte ptr)
+end type
+
+
+operator ostring.&= (byval pors1 as byte ptr)
+     strcpys(This.pors1,pors1 )
+end operator
+
+operator ostring.+= (byval pors1 as byte ptr)
+     strcats(This.pors1,pors1 )
+end operator
 
