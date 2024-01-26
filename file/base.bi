@@ -14,6 +14,8 @@ type ostring
     pors1 as byte ptr
     declare Operator &= (byval pors1 as byte ptr)
     declare Operator += (byval pors1 as byte ptr)
+    declare Operator *= (byval pors1 as integer)
+    
 end type
 
 
@@ -24,4 +26,13 @@ end operator
 operator ostring.+= (byval pors1 as byte ptr)
      strcats(This.pors1,pors1 )
 end operator
+
+operator ostring.*= (byval pors1 as integer)
+     This.pors1=mallocs(pors1)
+end operator
+
+
+function toString (byval pors1 as ostring)as byte ptr
+      return pors1.pors1
+end function
 
